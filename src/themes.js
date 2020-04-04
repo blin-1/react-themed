@@ -2,7 +2,13 @@ import { createMuiTheme, responsiveFontSizes} from '@material-ui/core/styles'
 import green from '@material-ui/core/colors/green'
 import orange from '@material-ui/core/colors/orange'
 
-const lightGreen = green[300]
+const lightGreen = green[400] //Fluorescent green
+const black = 'black'
+
+const baseColors = {
+	color: lightGreen,
+	backgroundColor: black,
+}
 
 let retro = createMuiTheme({
 
@@ -10,7 +16,7 @@ let retro = createMuiTheme({
 	    type: 'dark',
 		primary: green,
 		secondary: orange,
-		background: {default : "black"}
+		background: {default : black}
 	},
 	status: {
 		danger: 'yellow'
@@ -18,48 +24,38 @@ let retro = createMuiTheme({
 	 overrides: {
 
 		MuiPaper: {
-			root : {
-				color: lightGreen,
-				backgroundColor: "black",
-			}
+			root : baseColors
 		},
 
-		MuiCard: {
+		MuiTabs: {
+			root : baseColors
+		},
+
+ 		MuiCard: {
 			root : {
-				width : "40vw",
-				marginLeft:"30vw",
-				height : "40vh",
-				marginTop:"30vh"
+				width : "50%",
+				marginLeft: "25%",
+				height : "50%",
+				marginTop: "10%"
 			}
 		},
 
  		MuiInputBase: {
-			input : {
-				color: lightGreen
-			},
-			label : {
-				color: lightGreen
-			},			
-
+			input : baseColors,
+			label : baseColors
 		},
 		
 		MuiInputLabel: {
-			root : {
-				color: lightGreen
-			},
+			root : baseColors
 
 		},
 
 		MuiButton: {
-			text: {
-				color: lightGreen
-			}
+			text: baseColors
 		},
 
 		MuiTypography: {
-			colorPrimary: {
-				color : lightGreen
-			}
+			colorPrimary: baseColors
 		}
   	}
 })
