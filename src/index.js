@@ -6,11 +6,19 @@ import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+// Themes
+import { ThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from "@material-ui/core/CssBaseline"
+import {retro} from   "./themes.js"
+
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+							<Provider store={store}>
+								<ThemeProvider theme={retro}>
+									<CssBaseline />
+									<App />
+								</ThemeProvider>
+							</Provider>,  
+							document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
