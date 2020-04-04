@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../logo.svg';
 import { Counter } from '../counter/Counter';
-import './CounterPanel.module.css';
+import './CounterPanel.css';
 
 function CounterPanel() {
   return (
