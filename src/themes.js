@@ -41,8 +41,7 @@ let retro = createMuiTheme({
 		},
 
  		MuiInputBase: {
-			input : baseColors,
-			label : baseColors
+			input : baseColors
 		},
 		
 		MuiInputLabel: {
