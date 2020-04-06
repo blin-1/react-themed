@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import axios  from 'axios';
 
 export const slice = createSlice({
 
@@ -41,11 +42,15 @@ export const slice = createSlice({
 
 export const { setUsername,setPassword,logon,logoff } = slice.actions;
 
-export const logonAsync = (username,password) => dispatch => {
-  setTimeout(() => {
-    dispatch(logon(username,password));
-  }, 2000);
-};
+
+export const authorize = (username,password) => dispatch => {
+      axios.get("https://jsonplaceholder.typicode.com/users")
+        .then((response) => {
+          dispatch(logon({username,password}))
+          console.log(response.data[0].name)
+        })
+        .catch((response) => {return Promise.reject(response);});
+}
 
 export const selectUsername = state => state.login.username
 export const selectPassword = state => state.login.password

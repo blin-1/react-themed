@@ -7,13 +7,9 @@ import Typography from '@material-ui/core/Typography'
 
 import { useSelector, useDispatch } from 'react-redux'
 import {
-  logon,
-  // eslint-disable-next-line
-  logoff,
   setUsername,
   setPassword,
-  // eslint-disable-next-line
-  logonAsync,
+  authorize,
   selectUsername,
   selectPassword
 } from './login.slice'
@@ -43,9 +39,8 @@ function LoginPanel () {
 								onChange={e => dispatch(setUsername(e.target.value))}
 							/>
 						</FormControl>
-
+						
 						<br></br>
-		
 
 						<FormControl>
 							<TextField id="password" 
@@ -63,18 +58,9 @@ function LoginPanel () {
 				
 				<CardActions>
 					<Button
-						onClick={() =>
-							dispatch(logon({username: username,password: password}))
-						}						
-						>
-						Login
-					</Button>
-					<Button
-						onClick={() =>
-							dispatch(logon({username: username,password: password}))
-						}						
-						>
-						Google Login
+						 onClick={() => dispatch(authorize(username,password))}
+					>
+					Login
 					</Button>
 				</CardActions>
 			

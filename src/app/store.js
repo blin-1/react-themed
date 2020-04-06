@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {createLogger} from 'redux-logger'
+import ReduxThunk from 'redux-thunk'
+
 import counterReducer from '../features/counter/Counter.slice'
 import loginReducer from '../features/loginPanel/login.slice'
 
@@ -12,5 +14,5 @@ export default configureStore({
     counter: counterReducer,
     login:   loginReducer
   },
-  middleware : [logger]
+  middleware : [ReduxThunk,logger]
 });
