@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from 'assets/logo.svg';
 import Counter  from 'app/tabs/redux/counter/counter.panel';
-import 'app/tabs/redux/counter.panel.css';
+import 'app/tabs/redux/logo.panel.css';
 
-function CounterPanel() {
+function LogoPanel() {
   return (
       <header>
         <img src={logo} className="App-logo" alt="logo" />
@@ -50,4 +50,4 @@ function CounterPanel() {
   );
 }
 
-export default CounterPanel
+export default LogoPanel

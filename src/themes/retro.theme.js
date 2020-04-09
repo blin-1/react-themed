@@ -61,4 +61,4 @@ let retro = createMuiTheme({
 
 retro = responsiveFontSizes(retro)
 
-export {retro}
+export default retro

@@ -9,8 +9,8 @@ import Box from '@material-ui/core/Box';
 
 // Tab contents
 
-import LoginPanel   from 'app/tabs/login/login.panel'
-import CounterPanel from 'app/tabs/redux/counter.panel.jsx'  
+import Login from 'app/tabs/login/login.panel'
+import Logo  from 'app/tabs/redux/logo.panel'  
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0); // first tab
 
   const handleChange = (_event, newValue) => {
     setValue(newValue);
@@ -67,10 +67,10 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-		    <CounterPanel />
+		    <Logo/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <LoginPanel />
+        <Login/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Grid goes here
