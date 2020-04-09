@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../logo.svg';
-import { Counter } from '../counter/Counter';
-import './CounterPanel.css';
+import logo from 'assets/logo.svg';
+import Counter  from 'app/tabs/redux/counter/counter.panel';
+import 'app/tabs/redux/counter.panel.css';
 
 function CounterPanel() {
   return (

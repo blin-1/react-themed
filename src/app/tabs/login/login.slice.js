@@ -52,7 +52,8 @@ export const authorize = (username,password) => dispatch => {
         .catch((response) => {return Promise.reject(response);});
 }
 
-export const selectUsername = state => state.login.username
-export const selectPassword = state => state.login.password
+export const selectUsername   = state => state.login.username
+export const selectPassword   = state => state.login.password
+export const selectAuthorized = state => state.login.authorized
 
 export default slice.reducer;

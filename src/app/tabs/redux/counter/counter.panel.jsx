@@ -6,13 +6,13 @@ import {
   incrementByAmount,
   incrementAsync,
   selectCount,
-} from './Counter.slice';
-import styles from './Counter.module.css';
+}             from 'app/tabs/redux/counter/counter.slice';
+import styles from 'app/tabs/redux/counter/counter.module.css';
 
-export function Counter() {
+export default function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('10');
+  const [incrementAmount, setIncrementAmount] = useState('11');
 
   return (
     <div>

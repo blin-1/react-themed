@@ -9,8 +9,8 @@ import Box from '@material-ui/core/Box';
 
 // Tab contents
 
-import LoginPanel    from '../loginPanel/LoginPanel'
-import CounterPanel from '../counterPanel/CounterPanel.jsx'  
+import LoginPanel   from 'app/tabs/login/login.panel'
+import CounterPanel from 'app/tabs/redux/counter.panel.jsx'  
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

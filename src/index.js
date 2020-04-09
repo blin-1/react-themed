@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import store from './app/store';
+import App from 'app/app';
+import store from 'app/store'
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from 'app/serviceWorker';
 
 // Themes
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from "@material-ui/core/CssBaseline"
-import {retro} from   "./themes.js"
+import {retro} from   "themes/retro.js"
 
 ReactDOM.render(
 							<Provider store={store}>

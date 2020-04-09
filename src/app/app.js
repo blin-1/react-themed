@@ -1,6 +1,7 @@
-import React from 'react';
-import TabPanel from './features/tabPanel/TabPanel';
-import './App.css';
+import React from 'react'
+import TabPanel from 'app/tabs/tabs'
+
+import 'app/app.css'
 
 function App() {
   return (
