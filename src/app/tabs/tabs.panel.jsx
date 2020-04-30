@@ -10,7 +10,8 @@ import Box from '@material-ui/core/Box';
 // Tab contents
 
 import Login from 'app/tabs/login/login.panel'
-import Logo  from 'app/tabs/redux/logo.panel'  
+import Logo  from 'app/tabs/redux/logo.panel' 
+import Grid  from 'app/tabs/grid/grid.panel'   
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,7 +74,7 @@ export default function SimpleTabs() {
         <Login/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Grid goes here
+        <Grid/>
       </TabPanel>
     </div>
   );

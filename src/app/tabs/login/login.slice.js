@@ -47,7 +47,7 @@ export const authorize = (username,password) => dispatch => {
       axios.get("https://jsonplaceholder.typicode.com/users")
         .then((response) => {
           dispatch(logon({username,password}))
-          console.log(response.data[0].name)
+          console.log(response.data)
         })
         .catch((response) => {return Promise.reject(response);});
 }
