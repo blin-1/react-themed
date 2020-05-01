@@ -4,6 +4,7 @@ import ReduxThunk from 'redux-thunk'
 
 import counterReducer from 'app/tabs/redux/counter/counter.slice'
 import loginReducer   from 'app/tabs/login/login.slice'
+import gridReducer    from 'app/tabs/grid/grid.slice'
 
 const logger = createLogger({
   // ...options
@@ -12,7 +13,8 @@ const logger = createLogger({
 export default configureStore({
   reducer: {
     counter: counterReducer,
-    login:   loginReducer
+    login:   loginReducer,
+    grid:    gridReducer
   },
   middleware : [ReduxThunk,logger]
 });

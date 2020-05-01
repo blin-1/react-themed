@@ -1,43 +1,60 @@
-import React, {Component} from 'react'
+import React, {useEffect, componentWillMount, shouldComponentUpdate} from 'react'
 import {AgGridReact} from 'ag-grid-react'
 
 import 'ag-grid-community/dist/styles/ag-grid.css'
-//import 'ag-grid-community/dist/styles/ag-theme-balham.css'
+import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css'
 
-export default class UserGrid extends Component {
-	constructor(props) {
-		super(props)
+import { useSelector, useDispatch } from 'react-redux'
+import { getUsers,    selectUsers } from 'app/tabs/grid/grid.slice'
+import Typography from '@material-ui/core/Typography'
 
-		this.state = {
+function UserGridPanel () {
+
+	const users = useSelector(selectUsers);
+  	const dispatch = useDispatch();
+	const config = {
 			columnDefs: [
-				{headerName: "Make", field: "make"},
-				{headerName: "Model", field: "model"},
-				{headerName: "Price", field: "price"}
-
-			],
-			rowData: [
-				{make: "Toyota", model: "Celica", price: 35000},
-				{make: "Ford", model: "Mondeo", price: 32000},
-				{make: "Porsche", model: "Boxter", price: 72000}
+				{headerName: "Id", field: "id"},
+				{headerName: "Name", field: "name"},
+				{headerName: "Company", field: "company.name"}
+				
 			]
 		}
-	}
+	
+	useEffect(() => dispatch (getUsers()),[dispatch]) 	// dispatch is passed as a dependency 
+														// to execute the hook only once
 
-	render() {
-		return (
-			<div
- 				className="ag-theme-balham"
+
+	// componentDidMount = () => dispatch (getUsers()) 
+
+	//shouldComponentUpdate(() => {return false})
+
+	return (
+			<>
+ 			<Typography color="primary" gutterBottom>
+				{users.map(user => <div>{user.name}</div>)}
+			</Typography>
+
+
+			  {/* 
+			  <div
+ 				className="ag-theme-alpine-dark"
 				style={{
 					height: '500px',
 					width: '100%'
 				}}
 			>
 				<AgGridReact
-					columnDefs={this.state.columnDefs}
-					rowData={this.state.rowData}>
+					columnDefs={config.columnDefs}
+					rowData = {users}
+                    //immutableData={true}
+                    //getRowNodeId={data => data.id.toString()}>  
+				>
 				</AgGridReact>
-			</div>
-		);
-	}
+			</div> 
+			*/}
+			</> 
+		)
 
 }
+export default UserGridPanel
