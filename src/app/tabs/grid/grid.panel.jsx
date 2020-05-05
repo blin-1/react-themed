@@ -1,8 +1,8 @@
-import React, {useEffect, componentWillMount, shouldComponentUpdate} from 'react'
-import {AgGridReact} from 'ag-grid-react'
+import React, {useEffect} from 'react'
 
-import 'ag-grid-community/dist/styles/ag-grid.css'
-import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css'
+//import {AgGridReact} from 'ag-grid-react'
+//import 'ag-grid-community/dist/styles/ag-grid.css'
+//import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { getUsers,    selectUsers } from 'app/tabs/grid/grid.slice'
@@ -11,23 +11,17 @@ import Typography from '@material-ui/core/Typography'
 function UserGridPanel () {
 
 	const users = useSelector(selectUsers);
-  	const dispatch = useDispatch();
-	const config = {
+  const dispatch = useDispatch();
+/* 	const config = {
 			columnDefs: [
 				{headerName: "Id", field: "id"},
 				{headerName: "Name", field: "name"},
-				{headerName: "Company", field: "company.name"}
-				
+				{headerName: "Company", field: "company.name"}				
 			]
-		}
+	} */
 	
 	useEffect(() => dispatch (getUsers()),[dispatch]) 	// dispatch is passed as a dependency 
 														// to execute the hook only once
-
-
-	// componentDidMount = () => dispatch (getUsers()) 
-
-	//shouldComponentUpdate(() => {return false})
 
 	return (
 			<>
